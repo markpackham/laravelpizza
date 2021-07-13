@@ -18,5 +18,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizzas');
-Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('details');
+Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizzas.index');
+Route::get('/pizzas/create', [PizzaController::class, 'create'])->name('pizzas.create');
+Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizzas.show');
