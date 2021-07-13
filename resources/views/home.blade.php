@@ -1,25 +1,25 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+<div class="flex-center position-ref full-height">
+    @if (Route::has('login'))
+        <div class="top-right links">
+            @auth
+                <a href="{{ url('/home') }}">Home</a>
+            @else
+                <a href="{{ route('login') }}">Login</a>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}">Register</a>
+                @endif
+            @endauth
+        </div>
+    @endif
 
-                    You are logged in!
-                    <div>
-                      <a href="{{ route('pizzas.index') }}">View all Pizza Orders</a>
-                    </div>
-                </div>
-            </div>
+    <div class="content">
+        <img src="/img/pizza-house.png" alt="pizza house logo">
+        <div class="title m-b-md">
+            The North's Best Pizzas
         </div>
     </div>
 </div>

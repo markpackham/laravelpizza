@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PizzaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pizzas');
+    return view('home');
 });
+
+Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizzas');
+Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('details');
