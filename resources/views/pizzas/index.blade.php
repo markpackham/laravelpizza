@@ -13,6 +13,10 @@
           </div>
         @endforeach
 
+        <p>
+          <a href="/">Home</a>
+          <a href="/pizzas/create">Order a Pizza</a>
+        </p>
     </div>
 </div>
 @endsection
