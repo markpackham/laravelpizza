@@ -1,3 +1,4 @@
+
 @extends('layouts.layout')
 
 @section('content')
@@ -23,7 +24,6 @@
         </div>
         <p class="mssg">{{ session('mssg') }}</p>
         <a href="/pizzas/create">Order a Pizza</a>
-        <a href="/pizzas/">See Orders</a>
     </div>
 </div>
 @endsection
