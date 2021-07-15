@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class PizzaController extends Controller
 {
+
+    // Restrict every PiazzaController route
+    // public function __construct(){
+    //   $this->middleware('auth');
+    // }
+
     public function index() {
 
       // $pizzas = Pizza::all();
